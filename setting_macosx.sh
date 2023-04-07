@@ -37,3 +37,13 @@ if [ ! -d "$HOME/.vim_runtime" ]; then
     git clone --depth=1 https://github.com/amix/vimrc.git $HOME/.vim_runtime
     sh $HOME/.vim_runtime/install_awesome_vimrc.sh
 fi
+
+# git config
+git config --global user.name "Jungmin Kong"
+git config --global user.email jungmin.knog@navercorp.com
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
