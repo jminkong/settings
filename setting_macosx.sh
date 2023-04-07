@@ -17,7 +17,11 @@ brew update
 brew install tmux pyenv pyenv-virtualenv git wget glib cmake vim
 
 # pyenv init
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+if ! which pyenv-virtualenv-init > /dev/null; then
+    export PATH="~/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
